@@ -48,7 +48,7 @@ while True:
             date = time.mktime(datetime.datetime.now().timetuple())
             #print(date)
             data = {'images': images, 'date': date,'operation':100}
-            response = requests.post(URL, json=data)
+            response = requests.post(URL, json=data, timeout=60)
             #response.c
             print(response.status_code)
             if response.status_code == 201:         #if user recognized
