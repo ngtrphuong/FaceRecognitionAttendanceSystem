@@ -125,7 +125,7 @@ class Recognizer:
 
     def predict(self, *grays):
         with open(r'static/trained.yaml') as file:
-            documents = yaml.load(file, Loader=yaml.Loader)
+            documents = yaml.load(file, Loader=yaml.SafeLoader)
         self.known_faces=np.array(documents)
         print(self.known_faces)
         face_locations = []
